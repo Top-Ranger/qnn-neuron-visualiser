@@ -1,0 +1,15 @@
+qnn-neuron-visualiser
+   by Marcus Soll
+
+-------------------------------------------------------------------------------
+
+qnn-neuron-visualiser is a simple tool to visualise the neuron output for
+various networks.
+
+Currently supported:
+   * CTRNN
+   * GasNet
+   * MSNN
+
+qnn-neuron-visualiser is licensed under the terms of the GNU General Public
+License Version 3 or (at your option) any later version.
