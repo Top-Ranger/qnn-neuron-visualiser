@@ -104,6 +104,7 @@ void QnnNeuronVisualiser::on_pushButton_clicked()
     QBuffer gasBuffer(&gasData);
 
     QMessageBox window;
+    double score;
 
     QString selection;
 
@@ -318,8 +319,12 @@ void QnnNeuronVisualiser::on_pushButton_clicked()
     window.setText(tr("The current simulation is running"));
     window.setWindowFlags(((windowFlags() | Qt::CustomizeWindowHint) & ~Qt::WindowCloseButtonHint));
     window.show();
-    simulation->getScore();
+    score = simulation->getScore();
     window.close();
+
+    QMessageBox::information(this,
+                             tr("Simulation score"),
+                             QString(tr("The simulation has returned a score of %1")).arg(score));
 
     if(neuronData != QByteArray())
     {
