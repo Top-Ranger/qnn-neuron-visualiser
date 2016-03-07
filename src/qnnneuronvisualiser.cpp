@@ -52,7 +52,6 @@ QnnNeuronVisualiser::QnnNeuronVisualiser(QWidget *parent) :
     _nn_model(NULL),
     _sim_model(NULL)
 {
-    qsrand(QTime::currentTime().msecsTo(QTime(0,0,0)));
     ui->setupUi(this);
 
     _nn_model = new QStringListModel(this);

@@ -19,6 +19,8 @@
 #ifndef ADDITIONALSIMULATIONFUNCTIONS_HPP
 #define ADDITIONALSIMULATIONFUNCTIONS_HPP
 
+#include <randomhelper.h>
+
 #include <QVector>
 
 namespace AdditionalSimulationFunctions {
@@ -26,19 +28,19 @@ static QVector<qint32> generateHugeMaze()
 {
     QVector<qint32> list;
     list.reserve(152);
-    int number = (qrand()%5)+1;
+    int number = RandomHelper::getRandomInt(1, 5);
     list << number;
     for(int i = 0; i < 150; ++i)
     {
         list << 0;
     }
-    if(qrand()%2)
+    if(RandomHelper::getRandomBool())
     {
         list << number;
     }
     else
     {
-        list << (qrand()%5)+1;
+        list << RandomHelper::getRandomInt(1, 5);
     }
     return list;
 }
